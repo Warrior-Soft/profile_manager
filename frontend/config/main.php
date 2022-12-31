@@ -64,7 +64,9 @@ return [
             'showScriptName' => false,
             'enableStrictParsing' => false,
             'rules' => [
-                ['class' => UrlRule::class, 'controller' => 'client']
+                ['class' => UrlRule::class, 'controller' => ['client' => 'client']],
+                ['class' => UrlRule::class, 'controller' => ['perfil' => 'perfil']]
+
             ],
         ],
     ],

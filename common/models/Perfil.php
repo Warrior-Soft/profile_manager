@@ -30,6 +30,7 @@ class Perfil extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['perfil_name', 'password','client_id'], 'required'],
             [['client_id'], 'integer'],
             [['perfil_name', 'password'], 'string', 'max' => 155],
             [['client_id'], 'exist', 'skipOnError' => true, 'targetClass' => Client::class, 'targetAttribute' => ['client_id' => 'id']],
