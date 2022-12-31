@@ -9,7 +9,13 @@ $params = array_merge(
 return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => ['gii'],
+    'modules' => [
+        'gii' => [
+            'class' => 'yii\gii\Module',
+        ],
+        // ...
+    ],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
         'request' => [
