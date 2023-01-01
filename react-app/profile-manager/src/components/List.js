@@ -5,7 +5,7 @@ class List extends React.Component {
     }
     state = {}
     render() {
-        return (<table class="table">
+        return (<table className="table">
             <thead>
                 <tr>
                     <th>ID</th>
