@@ -3,10 +3,21 @@
 namespace frontend\controllers;
 use frontend\resources\PerfilFields;
 use Yii;
+use yii\filters\Cors;
 
 class PerfilController extends \yii\rest\ActiveController {
 
     public $modelClass = PerfilFields::class;
+
+    public function behaviors()
+    {
+        return [
+            'corsFilter' => [
+                'class' => Cors::class,
+            ],
+        ];
+    }
+
 
     public function actionGetall()
     {

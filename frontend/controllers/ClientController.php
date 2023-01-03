@@ -3,10 +3,20 @@
 namespace frontend\controllers;
 use frontend\resources\ClientFields;
 use Yii;
+use yii\filters\Cors;
 
 class ClientController extends \yii\rest\ActiveController {
 
     public $modelClass = ClientFields::class;
+
+    public function behaviors()
+    {
+        return [
+            'corsFilter' => [
+                'class' => Cors::class,
+            ],
+        ];
+    }
 
     public function actionGetall()
     {

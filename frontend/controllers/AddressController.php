@@ -3,10 +3,21 @@
 namespace frontend\controllers;
 use frontend\resources\AddressFields;
 use Yii;
+use yii\filters\Cors;
 
 class AddressController extends \yii\rest\ActiveController {
 
     public $modelClass = AddressFields::class;
+
+    public function behaviors()
+    {
+        return [
+            'corsFilter' => [
+                'class' => Cors::class,
+            ],
+        ];
+    }
+
 
     public function actionGetall()
     {
